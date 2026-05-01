@@ -7811,7 +7811,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [120]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [148]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7835,7 +7835,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [149]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">PROCESSED</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../data/processed'</span><span class="p">)</span>
@@ -7878,7 +7878,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [122]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [150]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># log1p 轉換</span>
@@ -7942,7 +7942,7 @@ log_const : 0.0 ~ 14.1863
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [123]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 特徵選擇：計算各候選特徵與 log_p、log_q 的相關係數，取 top 5</span>
@@ -7998,7 +7998,7 @@ emb_new_750  0.195291  0.063286  0.195291
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [124]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 特徵矩陣：StandardScaler fit 在全部 223 筆</span>
@@ -8039,7 +8039,7 @@ emb_new_750  0.195291  0.063286  0.195291
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">scaler_cluster</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -8112,7 +8112,7 @@ emb_new_750  0.195291  0.063286  0.195291
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [126]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [154]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">best_k</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -8168,7 +8168,7 @@ cluster
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [127]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [155]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
@@ -8220,7 +8220,7 @@ train cluster 分布：
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [128]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [156]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">targets</span>         <span class="o">=</span> <span class="p">[</span><span class="s1">'log_p'</span><span class="p">,</span> <span class="s1">'log_q'</span><span class="p">,</span> <span class="s1">'log_constant'</span><span class="p">]</span>
@@ -8267,7 +8267,7 @@ Cluster 4: 30 筆 train → 迴歸完成
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [129]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [157]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
@@ -8345,7 +8345,7 @@ Cluster 4: 30 筆 train → 迴歸完成
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [130]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [158]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">hist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PROCESSED</span> <span class="o">/</span> <span class="s1">'hist_features.csv'</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -8401,23 +8401,30 @@ X_hist shape: (10375, 5)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [159]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 用 input features → (log_p_est, log_q_est) 的全量迴歸推估 cluster 歸屬，</span>
-<span class="c1"># 再用 KMeans.predict 指派 cluster</span>
-<span class="n">global_reg_p</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">'log_p'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="n">global_reg_q</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">'log_q'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 全局 LinearRegression：用全部 224 筆 fit，不分 cluster</span>
+<span class="n">global_models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">t</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">targets</span>
+<span class="p">}</span>
 
-<span class="n">log_p_est</span> <span class="o">=</span> <span class="n">global_reg_p</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_hist</span><span class="p">)</span>
-<span class="n">log_q_est</span> <span class="o">=</span> <span class="n">global_reg_q</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_hist</span><span class="p">)</span>
+<span class="c1"># 印出全局公式係數</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'=== 全局迴歸公式 ==='</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">global_models</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="s1">' + '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">coef</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> * </span><span class="si">{</span><span class="n">feat</span><span class="si">}</span><span class="s1">'</span>
+        <span class="k">for</span> <span class="n">coef</span><span class="p">,</span> <span class="n">feat</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">selected_features</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1"> 公式：'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">（截距）'</span><span class="p">)</span>
 
-<span class="n">hist</span><span class="p">[</span><span class="s1">'cluster'</span><span class="p">]</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
-    <span class="n">scaler_cluster</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">log_p_est</span><span class="p">,</span> <span class="n">log_q_est</span><span class="p">]))</span>
-<span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">'hist cluster 分布：'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="s1">'cluster'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+<span class="c1"># 對 hist_features 預測（log scale）</span>
+<span class="n">log_p_pred</span>     <span class="o">=</span> <span class="n">global_models</span><span class="p">[</span><span class="s1">'log_p'</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_hist</span><span class="p">)</span>
+<span class="n">log_q_pred</span>     <span class="o">=</span> <span class="n">global_models</span><span class="p">[</span><span class="s1">'log_q'</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_hist</span><span class="p">)</span>
+<span class="n">log_const_pred</span> <span class="o">=</span> <span class="n">global_models</span><span class="p">[</span><span class="s1">'log_constant'</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_hist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8430,88 +8437,39 @@ X_hist shape: (10375, 5)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>hist cluster 分布：
-cluster
-0    10187
-1       87
-2       35
-3       66
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/qg/p6lmk9491pd3rdlzsf84mfrh0000gn/T/ipykernel_26361/1165295241.py:9: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  hist['cluster'] = kmeans.predict(
+<pre>=== 全局迴歸公式 ===
+
+log_p 公式：
+  log_p = -0.0152 * emb_new_256 + 0.0005 * emb_new_095 + -0.0027 * duration + -0.0052 * emb_new_067 + 0.0016 * emb_new_409 + 0.0802（截距）
+
+log_q 公式：
+  log_q = 0.0174 * emb_new_256 + 0.0242 * emb_new_095 + 0.0295 * duration + 0.0239 * emb_new_067 + -0.0210 * emb_new_409 + 0.0774（截距）
+
+log_constant 公式：
+  log_constant = -0.4439 * emb_new_256 + -0.0413 * emb_new_095 + -0.1241 * duration + -0.0986 * emb_new_067 + 0.3285 * emb_new_409 + 10.0158（截距）
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cell-19">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cell-19">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [132]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [160]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 以全部 223 筆重新 fit 最終模型（評估用 train-only 模型，輸出用全量模型）</span>
-<span class="n">final_models</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">best_k</span><span class="p">):</span>
-    <span class="n">mask_c</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'cluster'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">c</span>
-    <span class="k">if</span> <span class="n">mask_c</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">final_models</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">continue</span>
-    <span class="n">X_c</span> <span class="o">=</span> <span class="n">X_all</span><span class="p">[</span><span class="n">mask_c</span><span class="p">]</span>
-    <span class="n">final_models</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">t</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_c</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">mask_c</span><span class="p">])</span>
-        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">targets</span>
-    <span class="p">}</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">hist_p</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">log_p_pred</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">hist_q</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">log_q_pred</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">hist_const</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">log_const_pred</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># 向量化預測</span>
-<span class="n">hist_p</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">))</span>
-<span class="n">hist_q</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">))</span>
-<span class="n">hist_const</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">best_k</span><span class="p">):</span>
-    <span class="n">mask_h</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[</span><span class="s1">'cluster'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">c</span>
-    <span class="k">if</span> <span class="n">mask_h</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="n">X_h</span> <span class="o">=</span> <span class="n">X_hist</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">final_models</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">hist_p</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">final_models</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="s1">'log_p'</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_h</span><span class="p">))</span>
-        <span class="n">hist_q</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">final_models</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="s1">'log_q'</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_h</span><span class="p">))</span>
-        <span class="n">hist_const</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">final_models</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="s1">'log_constant'</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_h</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hist_p</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">global_fallback</span><span class="p">[</span><span class="s1">'log_p'</span><span class="p">])</span>
-        <span class="n">hist_q</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">global_fallback</span><span class="p">[</span><span class="s1">'log_q'</span><span class="p">])</span>
-        <span class="n">hist_const</span><span class="p">[</span><span class="n">mask_h</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">global_fallback</span><span class="p">[</span><span class="s1">'log_constant'</span><span class="p">])</span>
-
-<span class="n">hist_p</span>     <span class="o">=</span> <span class="n">hist_p</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">hist_q</span>     <span class="o">=</span> <span class="n">hist_q</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">hist_const</span> <span class="o">=</span> <span class="n">hist_const</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cell-20">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [133]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">out_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="n">out_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s1">'reels_shortcode'</span><span class="p">:</span> <span class="n">hist</span><span class="p">[</span><span class="s1">'reels_shortcode'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
     <span class="s1">'p'</span>              <span class="p">:</span> <span class="n">hist_p</span><span class="p">,</span>
     <span class="s1">'q'</span>              <span class="p">:</span> <span class="n">hist_q</span><span class="p">,</span>
     <span class="s1">'M'</span>              <span class="p">:</span> <span class="n">hist</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
     <span class="s1">'constant'</span>       <span class="p">:</span> <span class="n">hist_const</span><span class="p">,</span>
-    <span class="s1">'cluster'</span>        <span class="p">:</span> <span class="n">hist</span><span class="p">[</span><span class="s1">'cluster'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
 <span class="p">})</span>
 
 <span class="n">out_path</span> <span class="o">=</span> <span class="n">OUTPUT</span> <span class="o">/</span> <span class="s1">'augmented_hist.csv'</span>
@@ -8532,13 +8490,13 @@ cluster
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>已儲存：../data/output/augmented_hist.csv
-(10375, 6)
-  reels_shortcode         p         q    M      constant  cluster
-0     DPeT4BHExo-  0.121143  0.000352  243  36296.377352        0
-1     DPZEm_oExnd  0.121229  0.000747  266  36099.044196        0
-2     DLvRZSlTBzn  0.121746  0.003137   37  34930.695235        0
-3     DIvNtToTBL-  0.121476  0.001892  231  35534.539494        0
-4     Ciksu1-vDBo  0.122095  0.004755  309  34162.798415        0
+(10375, 5)
+  reels_shortcode         p         q    M      constant
+0     DPeT4BHExo-  0.082518  0.084187  243  21674.517627
+1     DPZEm_oExnd  0.082571  0.083600  266  21723.970242
+2     DLvRZSlTBzn  0.082891  0.080065   37  22024.823827
+3     DIvNtToTBL-  0.082724  0.081905  231  21867.580420
+4     Ciksu1-vDBo  0.083107  0.077682  309  22230.445702
 </pre>
 </div>
 </div>
