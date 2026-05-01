@@ -40,51 +40,44 @@
 
 ## Step 3：Augmentation（`step3_augmentation.ipynb`）
 
-以 `new_features.csv` 的 223 筆做訓練（80% train / 20% test，random_state=42），對 `hist_features.csv` 的 10,373 筆推估 P/Q/M/constant。
+以 `new_features.csv` 的 224 筆做訓練，對 `hist_features.csv` 的 10,375 筆推估 P/Q/constant，M 直接取 `views`。
 
-**特徵前處理：**
+### 流程
 
-- `best_topic_labels`：LabelEncoder 編碼（fit 在 train+test+hist 聯集，避免 unseen label）
-- 缺值：以 train 中位數填補
-- 標準化：StandardScaler（只在 train 上 fit，避免 leakage）
-- 最終特徵維度：35（emb×32 + duration + AI業配判定 + best_topic_labels_enc）
+**1. 資料準備**
 
-**方法 A — KMeans Clustering（k=8）：**
+- 對 `p_after4d`、`q_after4d`、`constant_after4d_time0_views` 取 `log1p` 壓縮極端值
+- 候選特徵：`duration`、`best_topic_labels_enc`（LabelEncoder）、`AI業配判定`、`emb_new_000`～`emb_new_1023`（1024 維）
+- 計算各特徵與 `log_p`/`log_q` 的相關係數，取 **top 5** 作為迴歸特徵
+  - 實際選出：`emb_new_256`、`emb_new_095`、`duration`、`emb_new_067`、`emb_new_409`
 
-用 train 的 35 維特徵做分群，每個 cluster 的 P/Q/M/constant 取平均，舊資料依照分到的 cluster 填入對應平均值。
+**2. Elbow Method 找最佳 k（`data/output/elbow.png`）**
 
-**方法 B — KNN Similarity（K=5）：**
+- 在 `(log_p, log_q)` 空間跑 KMeans，k 從 2 掃到 15
+- 用 Kneedle 法自動偵測 elbow，得 **k = 5**
 
-找 Euclidean 距離最近的 5 個訓練樣本，以距離倒數加權平均計算 P/Q/M/constant。
+**3. KMeans 分群**
 
-## 改動過程與原因
+- 以 `(log_p, log_q)` 為分群依據，把 224 筆新資料分成 5 群
+- 各群大小：69 / 46 / 59 / 12 / 38 筆
 
-**改動 1 — 只用 embedding → 加入 duration、AI業配判定、best_topic_labels**
+**4. Per-Cluster 線性迴歸**
 
-原本只用 32 維 embedding，但這樣忽略了影片長度、是否業配、內容主題這些對觀看行為很重要的資訊，所以加進來一起做標準化後使用。
+- 80% train / 20% test（random_state=42，stratified by cluster）
+- 對每個 cluster 分別用 top-5 特徵跑 `LinearRegression`，預測 `log_p`、`log_q`、`log_constant`
 
-**改動 2 — M 值出現 1e+25 的離譜數字 → 加入 log1p 轉換**
+**5. 對舊資料預測**
 
-原始 M 值分佈極度不均，少數 outlier 把 cluster 平均值拉爆，導致預測出 1.676e+25 這種不合理的數字。改用 `log1p` 壓縮後再做分群和預測，輸出時用 `expm1` 轉回來，M 值恢復到幾萬到幾百萬的合理範圍。
+- 先用全量迴歸（input features → log_p_est, log_q_est）為 hist_features 推估落點
+- 再用 `KMeans.predict` 指派 cluster
+- 代入對應 cluster 的線性迴歸公式，`expm1` 轉回原始尺度
+- **M 直接取 `views` 欄位**（實際觀測值）
 
-**改動 3 — k=20 → k=8**
+### 最終輸出
 
-k=20 時 training data 只有 178 筆，平均每群只有 9 筆，PCA 圖上每個 cluster 只有一個點，分群太細導致泛化能力差。改成 k=8 後每群約 22 筆，cluster 間特徵變異數從 9 提升到 18～21，分群更有意義，且每個 cluster 都有清楚的主題（如食譜、飲料、台灣旅遊、營養與保健等）。
+`augmented_hist.csv`，10,375 筆，欄位：`reels_shortcode`、`p`、`q`、`M`、`constant`、`cluster`
 
-## 結果討論
-
-| 方法 | RMSE 總和（log scale） |
-|------|----------------------|
-| KMeans（k=8） | 27.92 |
-| KNN（K=5） | 28.85 |
-
-自動選用 **KMeans**。
-
-**特徵重要性：** 分群主要由 embedding 決定（emb_016、emb_004、emb_012 變異數最大），duration 和業配類型影響相對較小，代表文案的語意內容是決定這篇 Reels 擴散模式的最關鍵因素。
-
-**最終輸出：** `augmented_hist.csv`，10,373 筆，欄位為 `reels_shortcode`、`p`、`q`、`M`、`constant`、`method_used`。
-
-![KMeans Cluster PCA](data/output/kmeans_cluster_viz.png)
+![Elbow Method](data/output/elbow.png)
 
 ## 專案結構
 
